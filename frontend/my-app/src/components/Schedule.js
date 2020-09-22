@@ -15,7 +15,7 @@ export default class Schedule extends Component {
                     doctors: res
                 }
             )
-            console.log(this.state.doctors + " test")
+            console.log(this.state.doctors)
         })
     }
     render(){
@@ -23,8 +23,8 @@ export default class Schedule extends Component {
             <div className="providers">
             <h1>Schedule</h1>
             <Row>
-            {this.state.doctors.map((doctor, index) => (
-                <EachProvider doctor={doctor} key={index} />
+            {this.state.doctors.map(doctor => (
+                <EachProvider doctor={doctor} key={doctor.doctorId} />
             ))}
             </Row>
             </div>
