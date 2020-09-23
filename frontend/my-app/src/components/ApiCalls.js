@@ -10,6 +10,17 @@ const Api = Object.create({}, {
             })
             .then(res => res.json())
         }
+    },
+    GetAvailableSlots: {
+        value: () => {
+            return fetch("http://localhost:5000/api/slots", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json; charset=utf-8"
+                }
+            })
+            .then(res => res.json())
+        }
     }
 })
 export default Api;
