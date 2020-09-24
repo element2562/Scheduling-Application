@@ -59,3 +59,14 @@ code {
 .modal {
   display: block;
 }
+
+#appointmentConfirmation {
+  text-align: center;
+  margin: 0 5%;
+}
+
+.doctorInfo {
+  float: left;
+  background-color: whitesmoke;
+  width: 500px
+}

@@ -27,7 +27,8 @@ export default class EachProvider extends Component {
                     <Link className="eachSlot" key={index} to={{
                         pathname:"/schedule/confirmation",
                         state: {
-                            slot: slot
+                            slot: slot,
+                            doctorInfo: this.props.doctor
                         }
                     }}>{slot.startTime}</Link>
                 )) : <p>Sorry! This provider has no available slots.</p>}

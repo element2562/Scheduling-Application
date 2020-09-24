@@ -5,7 +5,7 @@ import MainPage from "./components/MainPage";
 import Schedule from "./components/Schedule";
 import SchedulePage from "./components/SchedulePage";
 
-export default class extends Component {
+export default class ApplicationViews extends Component {
     render()
     {
         return(

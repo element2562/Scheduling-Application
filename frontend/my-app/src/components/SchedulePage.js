@@ -1,21 +1,25 @@
 import React, { Component } from "react";
-import { useLocation } from "react-router-dom";
-export default class SchedulePage extends Component {
+import { withRouter } from "react-router-dom";
+class SchedulePage extends Component {
     state = {
         slot: {}
-    }
-    componentDidMount()
-    {
-        const location = useLocation();
-        this.setState({
-            slot: location.state
-        })
     }
     
     render()
     {
+        const { location } = this.props
+        console.log(location);
+        console.log(location.state.doctorInfo)
         return (
-            <h1>{this.state.slot.startTime}</h1>
+            <div id="appointmentConfirmation">
+                <h1>Appointment Confirmation</h1>
+                <div className="doctorInfo">
+                    <h3>Provider Info</h3>
+                    <strong>Provider name: </strong>{location.state.doctorInfo.firstName} {location.state.doctorInfo.lastName}
+                </div>
+            </div>
         )
     }
 }
+
+export default withRouter(SchedulePage);

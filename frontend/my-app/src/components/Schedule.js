@@ -17,7 +17,6 @@ export default class Schedule extends Component {
                     doctors: res
                 }
             )
-            console.log(this.state.doctors);
         })
         Api.GetAvailableSlots(1)
         .then(res => {
