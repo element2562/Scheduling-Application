@@ -20,7 +20,7 @@ namespace SchedulingApplication.Models
         public int IdDoctor { get; set; }
         [Required]
         public Doctor Doctor { get; set; }
-        public int IdPatient { get; set; }
+        public int? IdPatient { get; set; }
         public Patient Patient { get; set; }
     }
 }

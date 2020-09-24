@@ -23,14 +23,14 @@ namespace SchedulingApplication.Controllers
 
         // GET: api/Slots
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Slot>>> GetSlot(int doctorId)
+        public async Task<ActionResult<IEnumerable<Slot>>> GetSlot()
         {
-            return await _context.Slot.Where(s => s.IdDoctor == doctorId).ToListAsync();
+            return await _context.Slot.ToListAsync();
         }
 
         // GET: api/Slots/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Slot>> GetSlotById(int id)
+        public async Task<ActionResult<Slot>> GetSlot(int id)
         {
             var slot = await _context.Slot.FindAsync(id);
 
