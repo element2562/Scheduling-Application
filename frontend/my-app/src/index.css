@@ -62,11 +62,11 @@ code {
 
 #appointmentConfirmation {
   text-align: center;
-  margin: 0 5%;
+  margin: 0 auto;
 }
 
 .doctorInfo {
-  float: left;
+  margin: 0 auto;
   background-color: whitesmoke;
   width: 500px
 }
