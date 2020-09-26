@@ -70,3 +70,22 @@ code {
   background-color: whitesmoke;
   width: 500px
 }
+
+#patientLineOne {
+  display: inline;
+  margin: 5% auto;
+}
+
+#patientLineTwo {
+  display: inline;
+}
+
+.form-group {
+  display: inline-block;
+  margin: 1% 5%;
+  width: 250px;
+}
+
+#submitAppointmentButton {
+  display: block;
+}
