@@ -89,3 +89,7 @@ code {
 #submitAppointmentButton {
   display: block;
 }
+
+.form-control {
+  text-align: center;
+}

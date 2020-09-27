@@ -24,13 +24,14 @@ export default class EachProvider extends Component {
                 <div className="slotContainer">
                 <h3>Available appointments</h3>
                 {slots.length > 0 ? slots.map((slot, index) => (
+                    !slot.isBooked ?
                     <Link className="eachSlot" key={index} to={{
                         pathname:"/schedule/confirmation",
                         state: {
                             slot: slot,
                             doctorInfo: this.props.doctor
                         }
-                    }}>{slot.startTime}</Link>
+                    }}>{slot.startTime}</Link> : null
                 )) : <p>Sorry! This provider has no available slots.</p>}
                 </div>
             </Card>
