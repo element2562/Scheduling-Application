@@ -4,6 +4,7 @@ import NavBar from "./components/Navbar"
 import MainPage from "./components/MainPage";
 import Schedule from "./components/Schedule";
 import SchedulePage from "./components/SchedulePage";
+import ScheduleSuccess from "./components/ScheduleSuccess";
 
 export default class ApplicationViews extends Component {
     render()
@@ -21,6 +22,9 @@ export default class ApplicationViews extends Component {
             />
             <Route exact path="/schedule/confirmation" render={() =>
                 <SchedulePage />}
+            />
+            <Route exact path="/schedule/confirmation/success" render={() =>
+                <ScheduleSuccess />}
             />
             </React.Fragment>
         )

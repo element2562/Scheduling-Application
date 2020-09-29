@@ -1,21 +1,21 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import { Form, Button } from "react-bootstrap";
-import { withRouter } from "react-router-dom";
+import { withRouter, useHistory } from "react-router-dom";
 import Api from "./ApiCalls";
 
 class SchedulePage extends Component {
     state = {
         validated: true
     };
-
+    
     componentWillMount()
     {
-        const { location } = this.props;
+        const { location, history } = this.props;
         this.setState({
             slot: location.state.slot,
-            doctor: location.state.doctorInfo
+            doctor: location.state.doctorInfo,
+            history: history
         });
-        console.log(this.state);
     }
 
     setValidated = (isValidated) => {
@@ -30,7 +30,6 @@ class SchedulePage extends Component {
           event.preventDefault();
           event.stopPropagation();
         }
-    
         this.setValidated(true);
     };
     
@@ -38,7 +37,15 @@ class SchedulePage extends Component {
         Api.CreatePatient(this.state.firstName, this.state.lastName, this.state.dateOfBirth, this.state.phoneNumber, this.state.email)
         .then(res => {
             Api.BookAppointment(this.state.slot.slotId, this.state.slot, this.state.doctor, res)
-            .then(result => console.log(result))
+            .then(() => {
+                this.state.history.push({
+                    pathname: "/schedule/confirmation/success",
+                    state: {
+                        slot: this.state.slot,
+                        doctor: this.state.doctor
+                    }
+                })
+            })
         })
     }
 
