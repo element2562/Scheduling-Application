@@ -25,7 +25,7 @@ namespace SchedulingApplication.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Slot>>> GetSlot()
         {
-            return await _context.Slot.ToListAsync();
+            return await _context.Slot.Where(s => !s.IsBooked).ToListAsync();
         }
 
         // GET: api/Slots/5
