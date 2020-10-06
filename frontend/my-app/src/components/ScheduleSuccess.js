@@ -20,8 +20,10 @@ class ScheduleSuccess extends Component {
     render()
     {
         return(
-            <div>
-                NOICE you booked an appointment with {this.state.doctor.firstName} {this.state.doctor.lastName}
+            <div className="successDiv">
+                <h1>Appointment Booked!</h1>
+                <p>You have successfully booked your appointment with {this.state.doctor.firstName} {this.state.doctor.lastName}</p>
+                <p>Make sure to arrive 15 minutes early from {this.state.slot.startTime}</p>
             </div>
         )
     }
